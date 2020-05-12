@@ -69,7 +69,7 @@ class Graph:
                     new_current.append(next_vert)
                     queue.enqueue(new_current)
                     # queue.enqueue(current + [next_vert])
-        return "Destination Vertex not found"
+        return None
 
     def dfs(self, starting_vertex, destination_vertex):
         stack = Stack()
@@ -84,7 +84,7 @@ class Graph:
                     new_current.append(next_vert)
                     stack.push(new_current)
                     # stack.push(current + [next_vert])
-        return "Destination Vertex not found"
+        return None
 
     def dfs_recursive(self, starting_vertex, destination_vertex, visited=None, path=None):
         if visited is None:
@@ -101,6 +101,7 @@ class Graph:
                     next_vert, destination_vertex, visited, new_path)
                 if next_vert_path:
                     return next_vert_path
+        return None
 
 
 if __name__ == '__main__':
